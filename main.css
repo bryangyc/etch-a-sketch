@@ -1,18 +1,17 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
     box-sizing: border-box;
     margin: 0;
-    /* min-height: 100vh; */
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    /* width: 400px; */
-    /* height: 400px; */
-    /* min-height: 100%; */
-    /* flex-direction: row; */
     flex-basis: 1;
+    width: 700px;
 }
 
 .container>div {
@@ -22,9 +21,3 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
-
-/* .container>div:nth-child(16n + 1) {
-    width:100%;
-    border: 0;
-    height: 0;
-} */
