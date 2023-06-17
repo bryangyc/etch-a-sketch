@@ -3,40 +3,28 @@
 
 
 const container = document.querySelector(".container");
-// const boxes = document.querySelectorAll(".container > div");
-// Random colour
-var randomColor = Math.floor(Math.random() * 16777215).toString(16);
 
 function createTable(noOfSquares) {
     for (let i = 0; i < (noOfSquares ** 2); i++) {
         const createDiv = document.createElement('div');
         container.appendChild(createDiv);
-        let d = 700 / noOfSquares;
+        let d = container.offsetWidth / noOfSquares;
         createDiv.style.width = `${d}px`;
         createDiv.style.height = `${d}px`;
+        createDiv.style.backgroundColor = '#ffff';
 
-        // boxes.forEach(box => {
-        //     box.addEventListener('mouseover', (e) =>
-        //         box.style.backgroundColor = 'black');
-        // });
 
-        // boxes.forEach(box => {
-        //     box.addEventListener('mouseout', (e) =>
-        //         box.style.backgroundColor = 'white');
-        // });
-        createDiv.addEventListener('mouseover', (e) =>
-            createDiv.style.backgroundColor = '#' + randomColor);
-        // createDiv.addEventListener('mouseout', (e) =>
-        //     createDiv.style.backgroundColor = 'white');
+        createDiv.addEventListener('mouseover', (e) => {
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            createDiv.style.backgroundColor = '#' + randomColor;
+        });
     };
+};
 
-}
 
 const button1 = document.querySelector
     ('#noOfSquares').addEventListener('click', function () {
         let noOfSquares = prompt("Please choose a number of squares");
-        // const noOfSquares = 4;
-        // alert(noOfSquares);
         if (noOfSquares > 100) {
             noOfSquares = 100 // Default the number to 100 if more than 100
         } else;
